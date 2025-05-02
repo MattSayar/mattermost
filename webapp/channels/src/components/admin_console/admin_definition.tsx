@@ -669,7 +669,7 @@ const AdminDefinition: AdminDefinitionType = {
             access_control_policy_details_edit: {
                 url: `user_management/attribute_based_access_control/edit_policy/:policy_id(${ID_PATH_PATTERN})`,
                 isHidden: it.any(
-                    it.not(it.licensedForSku(LicenseSkus.Premium)),
+                    it.not(it.licensedForSku(LicenseSkus.EnterpriseAdvanced)),
                     it.not(it.userHasReadPermissionOnResource(RESOURCE_KEYS.USER_MANAGEMENT.SYSTEM_ROLES)),
                 ),
                 isDisabled: it.not(it.userHasWritePermissionOnResource(RESOURCE_KEYS.USER_MANAGEMENT.SYSTEM_ROLES)),
@@ -682,7 +682,7 @@ const AdminDefinition: AdminDefinitionType = {
             access_control_policy_details: {
                 url: 'user_management/attribute_based_access_control/edit_policy',
                 isHidden: it.any(
-                    it.not(it.licensedForSku(LicenseSkus.Premium)),
+                    it.not(it.licensedForSku(LicenseSkus.EnterpriseAdvanced)),
                     it.not(it.userHasReadPermissionOnResource(RESOURCE_KEYS.USER_MANAGEMENT.SYSTEM_ROLES)),
                 ),
                 isDisabled: it.not(it.userHasWritePermissionOnResource(RESOURCE_KEYS.USER_MANAGEMENT.SYSTEM_ROLES)),
@@ -695,7 +695,7 @@ const AdminDefinition: AdminDefinitionType = {
                 url: 'user_management/attribute_based_access_control',
                 title: defineMessage({id: 'admin.sidebar.attributeBasedAccessControl', defaultMessage: 'Attribute-Based Access'}),
                 isHidden: it.any(
-                    it.not(it.licensedForSku(LicenseSkus.Premium)),
+                    it.not(it.licensedForSku(LicenseSkus.EnterpriseAdvanced)),
                     it.not(it.userHasReadPermissionOnResource(RESOURCE_KEYS.USER_MANAGEMENT.SYSTEM_ROLES)),
                 ),
                 isDisabled: it.not(it.userHasWritePermissionOnResource(RESOURCE_KEYS.USER_MANAGEMENT.SYSTEM_ROLES)),
@@ -738,7 +738,7 @@ const AdminDefinition: AdminDefinitionType = {
                         },
                     ],
                 },
-                restrictedIndicator: getRestrictedIndicator(false, LicenseSkus.Premium),
+                restrictedIndicator: getRestrictedIndicator(false, LicenseSkus.EnterpriseAdvanced),
             },
         },
     },
